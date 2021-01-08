@@ -44,10 +44,7 @@ $parS = "";
 // default
 $active = "Y";
 $deleted = "N";
-$id = $code = $name = "";
-
-$observation = $generator = "";
-
+$id = $code = $name = ""; $observation = $generator = "";
 
 $id = basePL::getReq($_REQUEST, "id");
 $code = basePL::getReq($_REQUEST, "code");
@@ -103,7 +100,7 @@ if ($id != "") {
 $sbl->buildArray($arPar);
 $sbl->execute($oper, $arPar);
 
-if ($oper == "find" || $oper == "findByName") {
+if ($oper == "find" || $oper == "findByName") { 
     $id = $arPar[0];
     $code = $arPar[1];
     $name = $arPar[2];
@@ -114,7 +111,7 @@ if ($oper == "find" || $oper == "findByName") {
 }
 
 ?>
-    <FORM action="<?php echo $action; ?>" method="post" name="entityclassPL" class="italsis">
+    <FORM action="<?php echo $action; ?>" method="post" name="entityclassPL" id="entityclassPL" class="italsis">
         <?php
 
         presentationLayer::buildFormTitle("entityclassBL", "");
@@ -134,7 +131,9 @@ if ($oper == "find" || $oper == "findByName") {
         presentationLayer::buildInitColumn();
         presentationLayer::buildCheck("active", "active", "active", $active);
         presentationLayer::buildCheck("deleted", "deleted", "deleted", $deleted);
-
+        ?>
+        <button type="submit">Enviar</button>
+        <?php
         presentationLayer::buildEndColumn();
 
         presentationLayer::buildFooter($bpl, $sbl, $pn);

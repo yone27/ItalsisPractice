@@ -117,7 +117,7 @@ if ($oper == "find" || $oper == "findByName") {
 }
 
 ?>
-<FORM action="<?php echo $action; ?>" method="post" name="entitysubclassPL" class="italsis">
+<FORM action="<?php echo $action; ?>" method="post" name="entitysubclassPL" id="entitysubclassPL" class="italsis">
 
     <?php
 

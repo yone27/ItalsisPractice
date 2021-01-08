@@ -34,6 +34,13 @@ basePL::buildccs();
             <?php require('entitysubclassPL.php'); ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="showAlert"></div>
+        </div>
+    </div>
+
+    <script src="./js/test.js"></script>
 </body>
 
 </html>

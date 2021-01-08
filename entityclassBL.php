@@ -79,7 +79,15 @@ class entityclassBL extends baseBL
             $A[] = utilities::buildS($this->active);
             $A[] = utilities::buildS($this->deleted);
       }
-
+      function insert($parAr)
+      {
+            $nerr = false;
+            if ($this->validate()) {
+                  $name = $this->scheme . ".isspins" . $this->table;
+                  $nerr = $this->dl->executeSP($name, $parAr);
+            }
+            return ($nerr);
+      } //insert
       function execute($urloper, &$parAr, $name = "")
       {
 
